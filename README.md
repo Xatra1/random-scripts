@@ -1,4 +1,4 @@
-You can obtain all files by typing ``git clone https://github.com/Xatra1/Random-Scripts`` into a terminal.  
+You can obtain all files by cloning the repository.  
 
 To run ip.js, you will first need to run ``npm install node-fetch fs promisify-child-process`` and ``sudo apt install beep && reboot`` for the success sound.    
   
