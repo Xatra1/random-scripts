@@ -2,7 +2,7 @@ You can obtain all files by cloning the repository.
 
 To run ip.js, you will first need to run ``npm install node-fetch fs promisify-child-process`` for the main script.  
   
-For the beep scripts, you will need to perform the following:  
+For the beep scripts, you will need to perform the following in a terminal:  
 ``sudo apt install beep``  
 ``sudo nano /etc/modprobe.d/blacklist.conf``  
 Comment out (put a # in front of) the following lines:  
@@ -10,7 +10,7 @@ Comment out (put a # in front of) the following lines:
   ``blacklist pcspkr``  
 Save and exit by hitting Ctrl+S and Ctrl+X.    
 ``sudo usermod -aG input ${USER}``  
-``reboot 0``  
+``reboot``  
 After the reboot is completed, the tones should play successfully.  
   
 ip.js: Gets your IP using api.ipify.org, saves it to a file, reads the IP from the file, plays a success sound, and deletes the file. Execute with ``node ip.js``  
