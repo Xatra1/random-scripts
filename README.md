@@ -9,6 +9,7 @@ Comment out (put a # in front of) the following lines:
   ``blacklist snd_pcsp``  
   ``blacklist pcspkr``  
 Save and exit by hitting Ctrl+S and Ctrl+X.    
+Note: it is recommended to restore the original state of these lines once you're done using the scripts.  
 ``sudo usermod -aG input ${USER}``  
 ``reboot``  
 After the reboot is completed, the tones should play successfully.  
