@@ -21,7 +21,7 @@ if (str != "") {
         hash = btoa(hash);
         console.log('Encoded MD5 Hash: ' + hash);
         fs.unlink('string2.json', function () {
-          console.log("Files removed.");
+          return;
         });
       });
     });
