@@ -11,16 +11,18 @@ if (str != "") {
   console.log("Encoded string: " + encodedStr);
   const hashEncode = prompt('Would you like the string to be encoded further? (y/n) ')
   if (hashEncode == "y") {
-    fs.writeFile('string2.json', JSON.stringify(jsonStr), function () {
-      fs.readFile('string2.json', function (err, data) {
+    console.log("Writing string to string.json...");
+    fs.writeFile('string.json', JSON.stringify(jsonStr), function () {
+      fs.readFile('string.json', function (err, data) {
         if (err) return console.log(err);
+        console.log("Calculating the MD5 hash of string.json...");
         data = JSON.parse(data);
         let md5 = crypto.createHash("md5");
         md5.update(data.encodedString);
         let hash = md5.digest('hex');
         hash = btoa(hash);
         console.log('Encoded MD5 Hash: ' + hash);
-        fs.unlink('string2.json', function () {
+        fs.unlink('string.json', function () {
           return;
         });
       });
