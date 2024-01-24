@@ -6,7 +6,7 @@ if (str != "") {
   console.log("Got it. Encoding this string: " + str);
   let encodedStr = btoa(str);
   let jsonStr = {
-    "encodedString": encodedStr
+    "EncodedString": encodedStr
   };
   console.log("Encoded string: " + encodedStr);
   let hashPrmpt = prompt('Would you like the string to be encoded further? (y/n) ')
@@ -21,7 +21,7 @@ if (str != "") {
         console.log("Calculating the MD5 hash of string.json...");
         data = JSON.parse(data);
         let md5 = crypto.createHash("md5");
-        md5.update(data.encodedString);
+        md5.update(data.EncodedString);
         let hash = md5.digest('hex');
         hash = btoa(hash);
         console.log('Encoded MD5 Hash: ' + hash);
