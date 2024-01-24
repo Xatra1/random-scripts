@@ -4,12 +4,12 @@ const crypto = require('crypto');
 const str = prompt('Please enter the string you would like to encode: ');
 if (str != "") {
   console.log("Got it. Encoding this string: " + str);
-  const encodedStr = btoa(str);
-  var jsonStr = {
+  let encodedStr = btoa(str);
+  let jsonStr = {
     "encodedString": encodedStr
   };
   console.log("Encoded string: " + encodedStr);
-  const hashPrmpt = prompt('Would you like the string to be encoded further? (y/n) ')
+  let hashPrmpt = prompt('Would you like the string to be encoded further? (y/n) ')
   if (hashPrmpt == "y") {
     console.log("Writing string to string.json...");
     fs.writeFile('string.json', JSON.stringify(jsonStr), function () {
