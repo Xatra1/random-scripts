@@ -9,7 +9,7 @@ if (str != "") {
     "encodedString": encodedStr
   };
   console.log("Encoded string: " + encodedStr);
-  const hashEncode = prompt('Would you like it to be encoded further? (y/n) ')
+  const hashEncode = prompt('Would you like the string to be encoded further? (y/n) ')
   if (hashEncode == "y") {
     fs.writeFile('string2.json', JSON.stringify(jsonStr), function () {
       fs.readFile('string2.json', function (err, data) {
