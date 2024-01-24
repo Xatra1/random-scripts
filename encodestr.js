@@ -18,8 +18,8 @@ if (str != "") {
         console.log("Calculating the MD5 hash of string.json...");
         data = JSON.parse(data);
         let md5 = crypto.createHash("md5");
-        let hash = md5.digest('hex');
         md5.update(data.encodedString);
+        let hash = md5.digest('hex');
         hash = btoa(hash);
         console.log('Encoded MD5 Hash: ' + hash);
         fs.unlink('string.json', function () {
