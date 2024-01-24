@@ -14,7 +14,10 @@ if (str != "") {
     console.log("Writing string to string.json...");
     fs.writeFile('string.json', JSON.stringify(jsonStr), function () {
       fs.readFile('string.json', function (err, data) {
-        if (err) return console.log(err);
+        if (err) {
+          console.log(err);
+          return process.exit()
+        }
         console.log("Calculating the MD5 hash of string.json...");
         data = JSON.parse(data);
         let md5 = crypto.createHash("md5");
@@ -23,10 +26,13 @@ if (str != "") {
         hash = btoa(hash);
         console.log('Encoded MD5 Hash: ' + hash);
         fs.unlink('string.json', function () {
-          return;
+          process.exit();
         });
       });
     });
   }
 }
 else console.log("You didn't input anything!");
+process.on('exit', function (code) {
+  return console.log("Process exited with code " + code);
+})
