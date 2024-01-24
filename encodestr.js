@@ -32,7 +32,7 @@ if (str != "") {
     });
   }
 }
-else console.log("You didn't input anything!");
+else console.log("You didn't input anything!") && process.exit();
 process.on('exit', function (code) {
   return console.log("Process exited with status code " + code);
 })
