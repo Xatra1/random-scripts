@@ -15,9 +15,9 @@ if (str != "") {
       fs.readFile('string2.json', function (err, data) {
         if (err) return console.log(err);
         data = JSON.parse(data);
-        const md5 = crypto.createHash("md5");
+        let md5 = crypto.createHash("md5");
         md5.update(data.encodedString);
-        var hash = md5.digest('hex');
+        let hash = md5.digest('hex');
         hash = btoa(hash);
         console.log('Encoded MD5 Hash: ' + hash);
         fs.unlink('string2.json', function () {
