@@ -3,11 +3,11 @@ const prompt = require('prompt-sync')();
 const crypto = require('crypto');
 const str = prompt('Please enter the string you would like to encode: ');
 if (str != "") {
-  console.log("Got it. Encoding this string: " + str);
-  let encodedStr = btoa(str);
+  console.log("Got it. Encoding this string: " + 
   let jsonStr = {
-    "EncodedString": encodedStr
+    "string": str
   };
+let encodedStr = btoa(str);
   console.log("Encoded string: " + encodedStr);
   let hashPrmpt = prompt('Would you like the string to be encoded further? (y/n) ')
   if (hashPrmpt == "y") {
