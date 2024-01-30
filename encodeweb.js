@@ -12,7 +12,8 @@ const requestListener = function (req, res) {
   res.writeHead(200);
   req.on('end', () => {
     console.log(msg);
-    res.end(msg);
+    if (msg == undefined) res.end("An error has occurred when processing your request. Please try again." + "\n");
+    else res.end(msg);
   })
 }
 const server = http.createServer(requestListener);
