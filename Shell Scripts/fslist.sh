@@ -12,3 +12,6 @@ case $choice in
 esac
 sleep 2
 clear
+if [ -f ./fsout.log ]; then
+nano fsout.log
+fi

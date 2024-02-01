@@ -22,4 +22,4 @@ After the reboot is completed, the tones should play successfully.
 **Shell Scripts/ipsuccess.sh:** The beep sound ip.js uses, plays using your motherboard's onboard speaker. Execute with ``bash ipsuccess.sh``  
 **Shell Scripts/beep.sh:** Plays a short jingle using your motherboard's onboard speaker. Execute with ``bash beep.sh``  
 **Shell Scripts/beeplong.sh:** Same as beep.sh, with 4 more tones. Execute with ``bash beeplong.sh``  
-**Shell Scripts/fslist.sh:** Lists every file and folder on your filesystem and outputs to fsout.log, with optional root access to allow for listing additional files. Execute with ``bash fslist.sh``
+**Shell Scripts/fslist.sh:** Lists every file and folder on your filesystem and outputs to fsout.log, with optional root access to allow for listing additional files. fsout.log will then be automatically opened in a text editor. Execute with ``bash fslist.sh``
