@@ -12,13 +12,13 @@ const requestListener = function (req, res) {
   res.writeHead(200);
   req.on('end', () => {
     console.log(msg);
-    if (msg == undefined) res.end("An error has occurred when processing your request. Please try again." + "\n");
+    if (msg == undefined) res.end('No POST data was sent to the server. Please try again.');
     else res.end(msg);
   })
 }
 const server = http.createServer(requestListener);
 server.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is listening on port ${port}`);
 });
 function encode(jsonChunk) {
   fs.writeFile('chunk.json', JSON.stringify(jsonChunk), function () {
