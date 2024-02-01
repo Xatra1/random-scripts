@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const crypto = require('crypto');
 const port = 9000;
-var msg;
+var chunk;
 const requestListener = function (req, res) {
   req.on('data', chunk => {
     const jsonChunk = { "string": JSON.stringify(chunk) }
@@ -11,9 +11,9 @@ const requestListener = function (req, res) {
   res.setHeader('Content-Type', 'text/json');
   res.writeHead(200);
   req.on('end', () => {
-    console.log(msg);
-    if (msg == undefined) res.end('No POST data was sent to the server. Please try again.');
-    else res.end(msg);
+    console.log(chunk);
+    if (chunk == undefined) res.end('No POST data was sent to the server. Please try again.');
+    else res.end(chunk);
   })
 }
 const server = http.createServer(requestListener);
@@ -31,8 +31,7 @@ function encode(jsonChunk) {
       hash = btoa(hash);
       chunk = hash;
       fs.unlink('chunk.json', function () {
-        msg = chunk + "\n";
-        return msg;
+        return chunk;
       });
     });
   });
