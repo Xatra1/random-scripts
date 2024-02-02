@@ -1,3 +1,5 @@
 *.txt
 *.json
-Shell Scripts/fsout.log
+Shell Scripts/*.log
+Shell Scripts/*.log.swp
+Shell Scripts/*.log.save
