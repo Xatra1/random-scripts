@@ -37,14 +37,22 @@ case $choice in
   [nN]*)
     echo 'This may take a while.'
     sleep 2
-    dir --color=no -AR /
-    echo Done!
+    dir --color=no -AR / 2>&1 | tee fsout.log
+    echo Done! Output saved to fsout.log
     ;;
   esac
   ;;
 [cC]*) echo 'Cancelled.' ;;
-*) exit
+*) exit ;;
 esac
 if [ -f ./fsout.log ]; then #Only use nano if script was not cancelled.
-  nano fsout.log
+  read -p 'Do you want to open the newly created file using nano? (y/n): ' choice
+  case $choice in
+  [yY]*)
+    nano fsout.log
+    ;;
+  [nN]*)
+    exit
+    ;;
+  esac
 fi
