@@ -43,7 +43,7 @@ case $choice in
   esac
   ;;
 [cC]*) echo 'Cancelled.' ;;
-*) exit ;;
+*) exit
 esac
 if [ -f ./fsout.log ]; then #Only use nano if script was not cancelled.
   nano fsout.log
