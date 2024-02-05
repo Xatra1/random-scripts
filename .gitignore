@@ -1,6 +1,5 @@
 *.txt
 *.json
-Shell Scripts/*.log
-Shell Scripts/*.log.swp
-Shell Scripts/*.log.save
-commit.sh
+shellscripts/*.log
+shellscripts/*.log.swp
+shellscripts/*.log.save
