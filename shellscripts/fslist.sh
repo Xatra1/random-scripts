@@ -57,7 +57,7 @@ case $choice in
 *) exit ;;
 esac
 if [ -f ./fsout.log ]; then #Only ask to use nano if script was not cancelled.
-  echo -e ${yel}'Once nano opens, you can switch between the two files by holding Alt and pressing the left and right arrow keys.'${nc}
+  echo -e ${yel}'Once nano opens, you can close out of fsout.log and get to fserr.log by pressing Ctrl+X'${nc}
   read -p 'Do you want to open the newly created files using nano? (y/n): ' choice
   case $choice in
   [yY]*)
