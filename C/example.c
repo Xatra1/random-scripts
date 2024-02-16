@@ -15,6 +15,7 @@ float dec = 3.5;
 const char readonly[] = "I am a read-only variable!";
 struct stat st = {0};
 // Functions
+
 void main()
 {
   printf("Creating file...\n");
