@@ -51,7 +51,7 @@ void createbigstr(FILE *fptr)
 {
   struct hello h;
   fprintf(fptr, "Creating h.bigstr...\n");
-  h.bigstr = "Hello world! I am bigger than readonly!";
+  h.bigstr = "Hello world! I am a big string! Pretty cool, right?";
   fprintf(fptr, "%s\n", h.bigstr);
   fprintf(fptr, "Size of h.bigstr in memory: %lu\n", sizeof(h.bigstr));
 }
