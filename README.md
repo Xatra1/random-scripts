@@ -1,9 +1,9 @@
 You can obtain all files by cloning the repository.  
 
-To run ip.js, you will first need to run ``npm install node-fetch fs promisify-child-process`` for the main script.  
-To run encodestr.js, you will first need to run ``npm install fs prompt-sync crypto``.  
-to run encodeweb.js, you will first need to run ``npm install fs http crypto``.  
-To compile C/example.c into an executable program, you will first need to run ``make && make clean`` in the same directory as ``example.c``.
+To run **ip.js**, you will first need to run ``npm install node-fetch fs promisify-child-process`` for the main script.  
+To run **encodestr.js**, you will first need to run ``npm install fs prompt-sync crypto``.  
+to run **encodeweb.js**, you will first need to run ``npm install fs http crypto``.  
+To compile **C/example.c** into an executable program, you will first need to run ``make && make clean`` in the same directory as ``example.c``.
 
 For the beep scripts, you will need to perform the following in a terminal:  
 ``sudo apt install beep``  
