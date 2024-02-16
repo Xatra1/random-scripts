@@ -3,3 +3,6 @@
 shellscripts/*.log
 shellscripts/*.log.swp
 shellscripts/*.log.save
+C/logs
+example
+*.o

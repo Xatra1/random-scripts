@@ -3,6 +3,7 @@ You can obtain all files by cloning the repository.
 To run ip.js, you will first need to run ``npm install node-fetch fs promisify-child-process`` for the main script.  
 To run encodestr.js, you will first need to run ``npm install fs prompt-sync crypto``  
 to run encodeweb.js, you will first need to run ``npm install fs http crypto``  
+To compile C/example.c into an executable program, you will first need to run ``make && make clean``  
 
 For the beep scripts, you will need to perform the following in a terminal:  
 ``sudo apt install beep``  
@@ -22,4 +23,5 @@ After the reboot is completed, the tones should play successfully.
 **shellscripts/ipsuccess.sh:** The beep sound ip.js uses, plays using your motherboard's onboard speaker. Execute with ``bash ipsuccess.sh``  
 **shellscripts/beep.sh:** Plays a short jingle using your motherboard's onboard speaker. Execute with ``bash beep.sh``  
 **shellscripts/beeplong.sh:** Same as beep.sh, with 4 more tones. Execute with ``bash beeplong.sh``  
-**shellscripts/fslist.sh:** Lists every file and folder on your filesystem and outputs to fsout.log, with optional root access to allow for listing additional files. fsout.log will then be automatically opened in a text editor. Execute with ``bash fslist.sh``
+**shellscripts/fslist.sh:** Lists every file and folder on your filesystem and outputs to fsout.log, with optional root access to allow for listing additional files. fsout.log will then be automatically opened in a text editor. Execute with ``bash fslist.sh``  
+**C/example.c:**  Lists a bunch of information and outputs it to logs/log.txt, optionally outputting it to stdout as well.  
