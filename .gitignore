@@ -5,4 +5,5 @@ shellscripts/*.log.swp
 shellscripts/*.log.save
 C/logs
 example
+encrypt
 *.o
