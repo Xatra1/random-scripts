@@ -1,8 +1,8 @@
-//Header inclusion
+// Header inclusions
 #include <stdio.h>
 #include <sys/stat.h> //For mkdir func
-#include <stdlib.h> //For exit func
-#include <unistd.h> //For access func
+#include <stdlib.h>   //For exit func
+#include <unistd.h>   //For access func
 
 void encrypt(FILE *Original, FILE *Encrypted, FILE *Key)
 {

@@ -1,8 +1,8 @@
 // Header inclusions
 #include <stdio.h>
 #include <sys/stat.h> //struct on line 16
-#include <unistd.h> //rmdir function
-#include "funcs.h" //fileread and createbigstr
+#include <unistd.h>   //rmdir function
+#include "funcs.h"    //fileread and createbigstr
 
 // Variables, pointers, etc
 struct hello
@@ -19,9 +19,12 @@ struct stat st = {0};
 void main()
 {
   printf("Creating file...\n");
-  if (stat("./logs", &st) == -1) {
+  if (stat("./logs", &st) == -1)
+  {
     mkdir("./logs", 0700);
-  } else {
+  }
+  else
+  {
     rmdir("./logs");
     mkdir("./logs", 0700);
   }
