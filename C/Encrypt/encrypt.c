@@ -1,8 +1,6 @@
 // Header inclusions
 #include <stdio.h>
 #include <sys/stat.h> //For mkdir func
-#include <stdlib.h>   //For exit func
-#include <unistd.h>   //For access func
 
 void encrypt(FILE *Original, FILE *Encrypted, FILE *Key)
 {
@@ -20,13 +18,19 @@ void encrypt(FILE *Original, FILE *Encrypted, FILE *Key)
       fclose(Original);
       Original = fopen("original.txt", "r");
       Encrypted = fopen("./results/cryptic.txt", "w");
+      int progress = 0;
       for (i = 0; i < res; i++)
       {
+        printf("\e[?25l");
         fread(&realtextholder, sizeof(char), 1, Original);
         encryptedtextholder = realtextholder + encryptionkey;
         fwrite(&encryptedtextholder, sizeof(char), 1, Encrypted);
-        printf("Encrypting Character %c ---> %c\n", realtextholder, encryptedtextholder);
+        ++progress;
+        printf("\rProgress: %d bytes out of %d bytes encrypted.", progress, res);
       }
+      printf("\e[?25h");
+      printf("\n");
+      printf("Done!\n\a");
       fclose(Original);
       fclose(Key);
       fclose(Encrypted);
@@ -58,13 +62,19 @@ void decrypt(FILE *Encrypted, FILE *NewOriginal, FILE *Key)
       int res = ftell(Encrypted);
       fclose(Encrypted);
       Encrypted = fopen("./results/cryptic.txt", "r");
+      int progress = 0;
       for (i = 0; i < res; i++)
       {
+        printf("\e[?25l");
         fread(&passwordreader, sizeof(char), 1, Encrypted);
         realtextholder = passwordreader - encryptionkey;
         fwrite(&realtextholder, sizeof(char), 1, NewOriginal);
-        printf("Decrypting Character %c ---> %c\n", passwordreader, realtextholder);
+        ++progress;
+        printf("\rProgress: %d bytes out of %d bytes decrypted.", progress, res);
       }
+      printf("\e[?25h");
+      printf("\n");
+      printf("Done!\n\a");
       fclose(Encrypted);
       fclose(NewOriginal);
       fclose(Key);
